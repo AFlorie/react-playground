@@ -1,14 +1,16 @@
-.red-text {
-    color: red;
+form {
+  border: 2px solid Black;
+  border-radius: 10px;
+  padding: 5px;
+  margin: auto;
+  width: 20%;
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.user-card {
-    list-style: none;
-    width: 17.5%;
-    display: inline-block;
-    border: 1px teal solid;
-    margin-right: 5px;
-    border-radius: 10px;
-    padding: 15px 20px;
-    box-shadow: 3px 2px 5px teal;
+.submit {
+  width: fit-content;
+  align-self: center;
 }
