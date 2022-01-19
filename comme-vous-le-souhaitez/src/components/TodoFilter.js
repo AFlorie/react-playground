@@ -1,5 +1,11 @@
 import React from "react";
 
-export default function TodoFilter() {
-  return <div></div>;
+export function TodoFilter({ handleFilter }) {
+  return (
+    <div className="filterContainer">
+      <button onClick={() => handleFilter("none")}>All</button>
+      <button onClick={() => handleFilter("done")}>Completed</button>
+      <button onClick={() => handleFilter("to do")}>To Do</button>
+    </div>
+  );
 }
