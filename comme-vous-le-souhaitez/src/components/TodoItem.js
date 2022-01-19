@@ -1,7 +1,6 @@
 import React from "react";
 
 export function TodoItem({ todo, toggleCompleted, handleDelete }) {
-  console.log("test", todo.isCompleted);
   return (
     <div className="lign">
       <div className={`${todo.isCompleted ? "completed" : "notCompleted"}`}>

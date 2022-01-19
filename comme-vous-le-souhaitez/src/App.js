@@ -12,11 +12,22 @@ function App() {
   });
   const [filteredList, setFilteredList] = useState([]);
   const [showInput, setShowInput] = useState({ show: false, id: null });
+  const [done, setDone] = useState(false);
 
   useEffect(() => {
     setFilteredList(toDoList);
+    checkDone();
   }, [toDoList]);
 
+  const checkDone = () => {
+    let test = toDoList.filter((item) => item.isCompleted === true);
+    if (test.length > 0) {
+      setDone(true);
+    } else {
+      setDone(false);
+    }
+  };
+  console.log("test", done);
   const handleKey = (e) => {
     if (e.key === "Escape") {
       setNewToDo({ ...newToDo, title: "" });
@@ -90,13 +101,14 @@ function App() {
   return (
     <div className="App">
       <div>
-        {" "}
         <TodoInput
           newToDo={newToDo}
           setNewToDo={setNewToDo}
           handleKey={handleKey}
         />
-        <button onClick={handleDeleteDone}>Remove completed task(s)</button>
+        {done && (
+          <button onClick={handleDeleteDone}>Remove completed task(s)</button>
+        )}
       </div>
       <TodoFilter handleFilter={handleFilter} />
       <TodoList
